@@ -1,212 +1,326 @@
-📅 Day 1 – LeetCode and GCR Practice (C#)
+&nbsp;# BridgeLabz-Training 🚀
 
 
 
-📌 Overview
+Welcome to my BridgeLabz-Training repo!  
 
+This README serves as a central log of my daily progress across different topics, branches, and .Net and C# modules.  
 
+Each entry includes concepts covered and skills practiced.
 
-Today marks Day 1 of my C# practice journey, covering both LeetCode-style problem solving and GCR codebase work. The focus was on understanding core programming logic, writing clean and readable code, practicing fundamental array and string problems, and organizing the project structure properly using Git and GitHub.
 
 
+---
 
-All programs were implemented with a clear approach, proper variable naming, and logical flow to make the code exam-ready and easy to understand.
 
 
+\## Day 1: December 17, 2025 - GitHub Setup and Java Basics 📅
 
-✅ LeetCode Problems Covered Today
+\*\*Topic:\*\* GitHub Repository Setup, Folder Structure Organization 📁  
 
+\*\*What I Learnt:\*\* 📚
 
+\- Setting up a GitHub repository for project tracking. 🔄
 
-1️⃣ Palindrome Number
+\- Creating and organizing folder structures for Java and C# codebases. 🗂️
 
+\- Basic Git commands for version control (init, add, commit, push). 💻
 
 
-Checked whether a given number reads the same forward and backward
 
-Implemented using a while loop
+---
 
-Used mathematical logic such as modulus and division
 
 
+\## Day 2: December 18, 2025 - Introduction to .NET and C# 🔧
 
-Concepts Used:
+\*\*Topic:\*\* .NET Framework, C# Syntax, Java to C# Conversion 🛠️  
 
+\*\*What I Learnt:\*\* 📚
 
+\- Basics of .NET ecosystem and C# language. 🌐
 
-Loops
+\- Key differences between Java and C# (e.g., Main method, using statements, Console I/O). 🔄
 
-Number manipulation
+\- Converting Java programs to C# equivalents, handling syntax changes. 🔄
 
-Conditional statements
+\- Building and running C# programs with dotnet CLI. ▶️
 
 
 
-2️⃣ Two Sum
+---
 
 
 
-Found two elements in an array whose sum equals a given target value
+\## Day 3: December 19, 2025 - Introduction to basics of C# 💻📁            
 
-Used a brute-force approach with nested loops
+\*\*Topic:\*\* Operators, Data Types and Type Conversion 🔧              
 
+\*\*What I Learnt:\*\* 📚           
 
+\- Learned basic operators in C# such as arithmetic, relational, and logical operators. ➕➖       
 
-Concepts Used:
+\- Understood commonly used data types like int, double, bool, char, and string. 🔢🔤            
 
+\- Studied implicit and explicit type conversion and their practical use cases. 🔄                 
 
+\- Hands-on practice using variables, data types, operators, and access modifiers. ✅              
 
-Arrays
 
-Nested loops
 
-Time complexity understanding
+---
 
 
 
-3️⃣ Reverse Array
+\## Day 4: December 19, 2025 – Introduction to Basics of C# 💻     
 
+\*\*Topic:\*\*  Operators, Data Types, Type Conversion \& Memory Concepts 🔧   
 
+\*\*What I Learnt:\*\* 📚        
 
-Reversed an array in-place without using any extra array
+\- Gained understanding of C# program execution and memory areas. 🧠     
 
-Used the two-pointer technique
+\- Learned about Stack memory, Heap memory, and Static memory (Method Area). 📦     
 
+\- Understood static vs non-static members and their execution order. ⚙️     
 
+\- Learned about constructors and their role in object initialization. 🏗️         
 
-Concepts Used:
+\- Studied access modifiers: public, private, protected, internal, protected internal, private protected 🔐       
 
 
 
-Arrays
+---
 
-Swapping logic
 
-While loop
 
+\## Day 5: December 22, 2025 – C# Control Flow Statements 🔁       
 
+\*\*Topic:\*\* Decision Making and Looping Constructs in C#          
 
-4️⃣ Valid Anagram
+\*\*What I Learnt:\*\* 📚          
 
+\- Understood the role of control flow statements in program execution. 🚦       
 
+\- Learned about boolean values and boolean expressions. ✔️❌          
 
-Checked whether two strings are anagrams of each other
+\- Used logical operators (\&\&, ||, !) in conditions. 🔗            
 
-Used character frequency counting instead of sorting
+\- Implemented conditional statements: if, else if, else 🧩           
 
+\- Learned looping constructs: for loop, while loop 🔄          
 
+\- Understood the use of break and continue to control loop flow. ⛔➡️        
 
-Concepts Used:
+\- Learned and practiced the switch statement for multi-way decision making. 🔀         
 
 
 
-Strings
+---
 
-Arrays (frequency array)
 
-Character manipulation
 
+\## Day 6: December 23, 2025 – Arrays in C# 🧮          
 
+\*\*Topic:\*\* Single \& Multi-Dimensional Arrays            
 
-5️⃣ Remove Element
+\*\*What I Learnt:\*\* 📚         
 
+\- Learned the basics of arrays and their importance in C#. 📦       
 
+\- Created and accessed single-dimensional arrays. 🔢           
 
-Removed all occurrences of a given value from an array
+\- Used for loops to iterate through array elements. 🔁        
 
-Modified the array in-place and calculated the new length
+\- Modified array values dynamically. ✏️           
 
+\- Used the Length property to avoid hard-coded values. 📏          
 
+\- Learned multi-dimensional and 2D arrays (matrices). 🔢🔢      
 
-Concepts Used:
+\- Accessed multi-dimensional arrays using nested loops. 🔄🔄            
 
+\- Followed best coding practices such as proper naming, indentation, comments, and input validation. ✅
 
 
-Arrays
 
-Two-pointer technique
+---
 
-In-place operations
 
 
+\## Day 7: December 24, 2025 - Methods in C# 📅                   
 
-📁 GCR Codebase Work
+\*\*Topic:\*\* Methods and Function Implementation 🔧                  
 
+\*\*What I Learnt:\*\* 📚                 
 
+\- Understood the concept of methods in C# ✅                       
 
-Created and organized the GCR folder structure for C# practice
+\- Learned method syntax and structure 🔢🔢               
 
-Created a separate leet-code-codebase folder to store LeetCode programs
+\- Created user-defined methods  📦                           
 
-Moved all solved C# programs into appropriate folders
+\- Learned how to call methods from the Main() method ✏️                       
 
-Maintained proper naming conventions for files and folders
+\- Solved basic logical problems by dividing code into methods 📏                            
 
-Ensured a clean, structured, and scalable project hierarchy
 
 
+---
 
-🔧 Git and GitHub Work
 
 
+\## Day 8: December 26, 2025- Strings in C# 📅
 
-Worked on the core-csharp-practise branch
+\*\*Topic:\*\* String Handling and Operations 🧵               
 
-Practiced Git commands such as status, add, commit, and push
+\*\*What I Learnt:\*\* 📚          
 
-Learned how to handle file path errors and verify file locations before staging
+\- Introduction to strings in C#. 🧩        
 
-Successfully pushed code and documentation to the GitHub repository
+\- Declaring and initializing strings. 🔄         
 
+\- Taking string input from the user. 📦          
 
+\- Accessing characters in a string using index. ✔️❌        
 
-🛠 Tools \& Technologies
+\- Using string properties and methods such as:Length, ToUpper(), ToLower(), Equals(). 🔗           
 
+\- Performed basic string operations: Comparing two strings, Reversing a string, Checking for palindrome strings, Counting vowels and consonants. 🔐
 
+\- Implemented programs without using built-in shortcuts where required. 📏         
 
-Language: C#
+\- Improved understanding of string manipulation and logic building. ✅
 
-IDE: VS Code and Notepad
 
-Version Control: Git and GitHub
 
-Environment: Git Bash
+---
 
-Practice Style: LeetCode problems and GCR structured practice
 
 
+\## Day 9: December 29, 2025- OOPS Fundamentals \& Scenario-Based Problems 📅                    
 
-🎯 Learning Outcome
+\*\*Topic:\*\* Introduction to OOPS \& Logical Scenarios 💡                          
 
+\*\*What I Learnt:\*\* 📚                    
 
+\- Introduction to Object-Oriented Programming (OOPS) 🔢                   
 
-Improved understanding of basic DSA and logic-building problems
+\- Core OOPS concepts: Class, Object, Encapsulation, Abstraction (basic understanding) 🗂️                    
 
-Gained confidence in writing clean, readable, and exam-ready C# code
+\- Representing real-world entities using classes and objects 🧠                       
 
-Learned how to organize a real-world codebase using folders
+\- Practice \& Scenario-Based Assignments:Temperature Analyzer, Snake and Ladder Game, Sentence Formatter, Student Score Card ✅                     
 
-Practiced proper Git workflows and daily documentation
 
-Understood the importance of consistency and structured practice
 
+---
 
 
-🚀 Next Plan
 
+\## Day 10: December 30, 2025- Constructors, Instance Members \& Scenarios 📅                       
 
+\*\*Topic:\*\* Object Creation \& Class Design 🏗️                          
 
-Solve more array and string-based problems
+\*\*What I Learnt:\*\* 📚                              
 
-Continue GCR exercises to strengthen core programming concepts
+\- Constructors in C# 🌐                          
 
-Start optimizing solutions for better time and space complexity
+\- Default and parameterized constructors 🔗                               
 
-Maintain daily progress with clean commits and proper documentation
+\- Instance variables and instance methods 💻                                                    
 
+\- Object initialization using constructors ✅                                       
 
+\- Practice \& Scenario-Based Assignments: Library Management System, Student Quiz Grader 🧠                                                 
 
-📌 Consistency > Speed. Day 1 completed successfully 💪
 
 
+---
+
+
+
+\## Day 11: December 31, 2025- Keywords in C# \& Practical Scenarios 📅                                                  
+
+\*\*Topic:\*\* this, static, sealed \& is Operator 🔑                                                      
+
+\*\*What I Learnt:\*\* 📚                                                        
+
+\- this keyword for resolving naming conflicts 🧠                                   
+
+\- static variables and methods 🧩                                                     
+
+\- sealed keyword to restrict inheritance 📦                            
+
+\- is operator for type checking 🌐                                                                                           
+
+\- Practice \& Scenario-Based Assignments: Bank Account System, Employee / Student Type Verification, Secure Utility Class 💻                                
+
+
+
+---
+
+
+
+\## Day 12: January 1, 2026- Object Modeling \& Class Diagram 📅                                                
+
+\*\*Topic:\*\* System Design \& UML Basics 🧩                                    
+
+\*\*What I Learnt:\*\* 📚                                              
+
+\- Object modeling concepts 🏗️                                                              
+
+\- Identifying classes, attributes, and methods 📏                                                        
+
+\- Class relationships 🌳                                                  
+
+\- Introduction to UML class diagrams 🔢🔤                                                     
+
+\- Practice \& Scenario-Based Assignments:Library System Object Model, Student Management System Design 🔗                                      
+
+
+
+---
+
+
+
+\## Day 13: January 2, 2026- Inheritance in C# 📅                                         
+
+\*\*Topic:\*\* Code Reusability \& Hierarchical Design 🌳                         
+
+\*\*What I Learnt:\*\* 📚                            
+
+\- Inheritance and IS-A relationship 🧩                                             
+
+\- Base and derived classes 💻                           
+
+\- Use of protected members 📏                                   
+
+\- Code reusability using inheritance 🌐                                                   
+
+\- Practice \& Scenario-Based Assignments: Animal Hierarchy, Employee Management System, Student Hierarchy 🔢🔤                                  
+
+
+
+--- 
+
+
+
+\## Day 14: January 3, 2025- OOPS Practice Questions 📅                                       
+
+\*\*Topic:\*\* Applying OOPS Concepts Through Practice 💻                              
+
+\*\*What I Learnt:\*\* 📚                                   
+
+\- Revised all core OOPS concepts: Class \& Object, Constructors, Inheritance, Encapsulation 🔗                                                  
+
+\- Keywords (this, static, sealed, is) 📏                                    
+
+\- Strengthened understanding through hands-on coding 🧩                          
+
+\- Improved problem-solving using object-oriented approach 🔢🔤                                                                                      
+
+\- Practice \& Assignments: Solved multiple practice questions based on OOPS concepts, Implemented real-world problems using proper class design 💻                            
+
+\- Student Quiz Grader: Compared student answers with correct answers. Calculated scores and displayed feedback. 🧠
 
