@@ -1,4 +1,4 @@
- # BridgeLabz-Training 🚀
+# BridgeLabz-Training 🚀
 
 Welcome to my BridgeLabz-Training repo!  
 This README serves as a central log of my daily progress across different topics, branches, and .Net and C# modules.  
@@ -47,7 +47,7 @@ Each entry includes concepts covered and skills practiced.
 ---
 
 ## Day 5: December 22, 2025 – C# Control Flow Statements 🔁       
-**Topic:** Decision Making and Looping Constructs in C#          
+**Topic:** Decision Making and Looping Constructs in C# 📁        
 **What I Learnt:** 📚          
 - Understood the role of control flow statements in program execution. 🚦       
 - Learned about boolean values and boolean expressions. ✔️❌          
@@ -60,7 +60,7 @@ Each entry includes concepts covered and skills practiced.
 ---
 
 ## Day 6: December 23, 2025 – Arrays in C# 🧮          
-**Topic:** Single & Multi-Dimensional Arrays            
+**Topic:** Single & Multi-Dimensional Arrays  📁          
 **What I Learnt:** 📚         
 - Learned the basics of arrays and their importance in C#. 📦       
 - Created and accessed single-dimensional arrays. 🔢           
@@ -152,7 +152,7 @@ Each entry includes concepts covered and skills practiced.
 
 --- 
 
-## Day 14: January 3, 2025- OOPS Practice Questions 📅                                       
+## Day 14: January 3, 2026- OOPS Practice Questions 📅                                               
 **Topic:** Applying OOPS Concepts Through Practice 💻                              
 **What I Learnt:** 📚                                   
 - Revised all core OOPS concepts: Class & Object, Constructors, Inheritance, Encapsulation 🔗                                                  
@@ -160,4 +160,81 @@ Each entry includes concepts covered and skills practiced.
 - Strengthened understanding through hands-on coding 🧩                          
 - Improved problem-solving using object-oriented approach 🔢🔤                                                                                      
 - Practice & Assignments: Solved multiple practice questions based on OOPS concepts, Implemented real-world problems using proper class design 💻                            
-- Student Quiz Grader: Compared student answers with correct answers. Calculated scores and displayed feedback. 🧠
+- Student Quiz Grader:Compared student answers with correct answers. Calculated scores and displayed feedback. 🧠
+
+  ---
+
+## Day 15: January 5, 2026- Advanced OOPS Concepts & Case Studies 📅                                                      
+**Topic:** Encapsulation, Polymorphism, Interface & Abstract Class 🧠                            
+**What I Learnt:** 📚                                                
+- Deep understanding of Encapsulation using properties 📏                    
+- Polymorphism through method overriding and runtime behavior 🧮                       
+- Difference between Interface and Abstract Class ✅                                     
+- Applying multiple OOPS concepts together in real-world applications 📦                            
+- Practice & Scenario-Based Assignments:Hospital Patient Management System, Vehicle Rental Application 📁                      
+
+---
+
+## Day 16: January 6, 2026- Inheritance, Interfaces & Arrays 📅                                       
+**Topic:** Polymorphism with Interfaces and Collections 🐦                                 
+**What I Learnt:** 📚                                   
+- Implementing multiple interfaces 🌐                                      
+- Using arrays to store objects 🧩                                               
+- Runtime type checking using is operator 📏                                              
+- Applying polymorphism while iterating collections 🏗️                                                                                                                                
+- Practice & Scenario-Based Assignments:Bird Sanctuary System(Scenario: EcoWing Wildlife Conservation Center), Customer Service Call Log Manager(Stored call logs using arrays) 💻            
+
+---
+
+## Day 17: January 7, 2026- Data Structures Introduction 📅                                     
+**Topic:** Linked List & Problem Solving 🧩                           
+**What I Learnt:** 📚                                     
+- Introduction to Data Structures 📁                          
+- Concept of Linked List ✅                                  
+- Difference between arrays and linked lists 🌐                                   
+- Practical use cases of linked lists 📏                                                                                         
+- Practice & Scenario-Based Assignments:Employee Wage Computation Problem(Calculated employee wages based on conditions). 📦                             
+  
+---
+
+## Day 18: January 8, 2026- Collections & Polymorphic Systems 📅                                                       
+**Topic:** Stack, Queue, HashMap & System Design 🏠                                         
+**What I Learnt:** 📚                                         
+- Stack data structure and its operations 💻                                              
+- Queue data structure and FIFO behavior 🧮                                                      
+- HashMap and hashing function basics 🌐                                              
+- Choosing correct data structures for scenarios 🏗️                                                    
+- Practice & Scenario-Based Assignments:Smart Home Automation(Demonstrated polymorphism). ✅                            
+
+---
+
+## Day 21: January 9, 2026 - Stack & Queue Concepts 📅                                                    
+**Topic:** Understanding Stack & Queue Data Structures 🧱📥                                                              
+**What I Learnt:** 📚                                                                                                                                                       
+- Understood the concept of Stack (LIFO – Last In First Out) 🧵                                                              
+- Understood the concept of Queue (FIFO – First In First Out) ⚙️                                                    
+- Learned basic stack operations:Push, Pop, Peek 📏                                                            
+- Learned basic queue operations:Enqueue, Dequeue 📦                                                             
+- Studied real-world use cases of Stack and Queue ▶️                                                                  
+- Practice & Assignments:Implemented basic programs, Focused on understanding core logic rather than scenarios. 🌳                                                            
+
+---
+
+## Day 22: January 12, 2026- Scenario-Based Programming 📅                                                                                   
+**Topic:** Real-World Problem Solving Using OOP 🏭💰                                                                                     
+**What I Learnt:** 📚                                                                     
+- Implemented scenario-based programs using OOP concepts 📏                                                                
+- Designed classes and methods for real-world applications ▶️                                                
+- Applied conditional logic for decision making ✅                                                     
+- Improved modular and structured coding approach ⚙️                                                                
+- Practice & Scenario-Based Assignments:Metal Custom Manufacturing System, Implemented loan eligibility check, Displayed approval or rejection report 🔑                  
+
+--
+
+## Day 23: January 13, 2026 - Searching Algorithms & Scenario-Based Applications 📅                                                               
+**Topic:** Linear Search, Binary Search & Search-Based Systems 🔍📚                                                                      
+**What I Learnt:** 📚                                                                
+- Learned Linear Search algorithm 🌳                                         
+- Learned Binary Search algorithm 🌐                                                          
+- Understood time complexity basics for searching techniques 🧵                                                                           
+- Practice & Scenario-Based Assignments:Implemented Linear Search program, Implemented Binary Search program, Bookshelf Management System, Movie Scheduler System 📦
