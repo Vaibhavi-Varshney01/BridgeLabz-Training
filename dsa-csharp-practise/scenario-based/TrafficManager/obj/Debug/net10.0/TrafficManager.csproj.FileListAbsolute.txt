@@ -1,5 +1,0 @@
-C:\Users\VARSH\OneDrive\Desktop\BridgeLabz-Training\dsa-csharp-practise\scenario-based\TrafficManager\obj\Debug\net10.0\TrafficManager.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\VARSH\OneDrive\Desktop\BridgeLabz-Training\dsa-csharp-practise\scenario-based\TrafficManager\obj\Debug\net10.0\TrafficManager.AssemblyInfoInputs.cache
-C:\Users\VARSH\OneDrive\Desktop\BridgeLabz-Training\dsa-csharp-practise\scenario-based\TrafficManager\obj\Debug\net10.0\TrafficManager.AssemblyInfo.cs
-C:\Users\VARSH\OneDrive\Desktop\BridgeLabz-Training\dsa-csharp-practise\scenario-based\TrafficManager\obj\Debug\net10.0\TrafficManager.csproj.CoreCompileInputs.cache
-C:\Users\VARSH\OneDrive\Desktop\BridgeLabz-Training\dsa-csharp-practise\scenario-based\TrafficManager\obj\Debug\net10.0\TrafficManager.sourcelink.json
