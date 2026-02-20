@@ -1,437 +1,657 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using CsvHelper;
+using System.Globalization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using System.Reflection;
 
 
-namespace AddressBookSystem
+// Utility class implementing interface
+public class AddressBookUtility : IAddressBook
 {
-    internal class AddressBookUtility : IAddressBook
-    {
-        // UC-2: List instead of array
-        private List<Contact> contacts = new List<Contact>();
+    // UC-2 : List instead of array
+    private List<AddressBookModel> contacts = new List<AddressBookModel>();
 
-        // UC-13 File path
-    private static string filePath = "AddressBook.txt";
+    private AddressBookModel model;
 
-    // UC-14 CSV file path
+    // UC-13 : File path
+    private static string textFilePath = "AddressBook.txt";
+    //UC-14
     private static string csvFilePath = "AddressBook.csv";
-
-    // UC-15 JSON file path
+    //UC-15
     private static string jsonFilePath = "AddressBook.json";
 
 
+    // UC-6 : Multiple Address Books
+    private static List<AddressBookUtility> addressBooks = new List<AddressBookUtility>();
+    private static List<string> addressBookNames = new List<string>();
 
-        // Constructor
-        public AddressBookUtility()
+
+    // Constructor
+    public AddressBookUtility()
+    {
+        model = new AddressBookModel();
+        model.WelcomeMessage = "Welcome to Address Book Program";
+    }
+
+
+    // UC-0
+    public void DisplayWelcomeMessage()
+    {
+        Console.WriteLine(model.WelcomeMessage);
+    }
+
+
+    // UC-1 + UC-2 : Add Contact
+    public void AddContact()
+    {
+        try
         {
-            Console.WriteLine(" Address Book initialized successfully!");
+            AddressBookModel person =
+                CreateContactUsingReflection();
+
+            if (person == null)
+                return;
+
+            foreach (var contact in contacts)
+            {
+                if (contact.Equals(person))
+                    throw new DuplicateContactException(
+                        "Duplicate contact found! Person already exists.");
+            }
+
+            contacts.Add(person);
+
+            Console.WriteLine("Contact Added Successfully!");
         }
-
-        // UC-6 Storage
-        private static List<AddressBookUtility> addressBooks = new List<AddressBookUtility>();
-        private static List<string> addressBookNames = new List<string>();
-
-        // UC-6 Create Address Book
-        public static void CreateAddressBook()
+        catch (Exception ex)
         {
-            Console.Write("\nEnter unique Address Book name: ");
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+
+    // UC-3 : Edit Contact
+    public void EditContact()
+    {
+        try
+        {
+            Console.Write("Enter First Name to Edit: ");
+
             string name = Console.ReadLine();
 
-            if (addressBookNames.Contains(name))
+            foreach (var contact in contacts)
             {
-                Console.WriteLine(" Address Book already exists!");
+                if (contact.FirstName.Equals(name,
+                    StringComparison.OrdinalIgnoreCase))
+                {
+
+                    Console.Write("New Address : ");
+                    contact.Address = Console.ReadLine();
+
+                    Console.Write("New Phone   : ");
+                    contact.PhoneNumber = Console.ReadLine();
+
+                    Console.WriteLine("Contact Updated!");
+
+                    return;
+                }
+            }
+
+            throw new ContactNotFoundException(
+                "Contact not found for editing."
+            );
+        }
+        catch (ContactNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+
+
+    // UC-4 : Delete Contact
+    public void DeleteContact()
+    {
+        try
+        {
+            Console.Write("Enter First Name to Delete: ");
+
+            string name = Console.ReadLine();
+
+            foreach (var contact in contacts)
+            {
+                if (contact.FirstName.Equals(name,
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    contacts.Remove(contact);
+
+                    Console.WriteLine("Contact Deleted!");
+
+                    return;
+                }
+            }
+
+            throw new ContactNotFoundException(
+                "Contact not found for deletion."
+            );
+        }
+        catch (ContactNotFoundException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+
+
+    // UC-5
+    public void AddMultipleContacts()
+    {
+        char choice;
+
+        do
+        {
+            AddContact();
+
+            Console.Write("Add another contact? (y/n): ");
+
+            choice = Console.ReadLine().ToLower()[0];
+
+        } while (choice == 'y');
+    }
+
+
+
+    // UC-6 Create
+    public static void CreateAddressBook()
+    {
+        Console.Write("Enter Address Book Name: ");
+
+        string name = Console.ReadLine();
+
+        if (addressBookNames.Contains(name))
+        {
+            Console.WriteLine("Address Book already exists!");
+
+            return;
+        }
+
+        addressBooks.Add(new AddressBookUtility());
+
+        addressBookNames.Add(name);
+
+        Console.WriteLine("Address Book Created!");
+    }
+
+
+
+    // UC-6 Select
+    public static AddressBookUtility SelectAddressBook()
+    {
+        Console.Write("Enter Address Book Name: ");
+
+        string name = Console.ReadLine();
+
+        for (int i = 0; i < addressBookNames.Count; i++)
+        {
+            if (addressBookNames[i].Equals(name,
+                StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Address Book Selected!");
+
+                return addressBooks[i];
+            }
+        }
+
+        Console.WriteLine("Address Book Not Found!");
+
+        return new AddressBookUtility();
+    }
+
+
+
+    // UC-7 Search City
+    public void SearchPersonByCity()
+    {
+        Console.Write("Enter City: ");
+
+        string city = Console.ReadLine();
+
+        var result =
+            contacts.Where(c => c.City.Equals(city,
+            StringComparison.OrdinalIgnoreCase)).ToList();
+
+
+        if (result.Count == 0)
+        {
+            Console.WriteLine("No persons found.");
+
+            return;
+        }
+
+        DisplayContacts(result);
+    }
+
+
+
+    // UC-8 Search State
+    public void SearchPersonByState()
+    {
+        Console.Write("Enter State: ");
+
+        string state = Console.ReadLine();
+
+        var result =
+            contacts.Where(c => c.State.Equals(state,
+            StringComparison.OrdinalIgnoreCase)).ToList();
+
+
+        if (result.Count == 0)
+        {
+            Console.WriteLine("No persons found.");
+
+            return;
+        }
+
+        DisplayContacts(result);
+    }
+
+
+
+    // UC-9 View City
+    public void ViewPersonByCity()
+    {
+        SearchPersonByCity();
+    }
+
+
+
+    // UC-10 View State
+    public void ViewPersonByState()
+    {
+        SearchPersonByState();
+    }
+
+
+
+    // UC-11 Count City
+    public void CountPersonByCity()
+    {
+        Console.Write("Enter City: ");
+
+        string city = Console.ReadLine();
+
+        int count =
+            contacts.Count(c => c.City.Equals(city,
+            StringComparison.OrdinalIgnoreCase));
+
+        Console.WriteLine("Count: " + count);
+    }
+
+
+
+    // UC-12 Count State
+    public void CountPersonByState()
+    {
+        Console.Write("Enter State: ");
+
+        string state = Console.ReadLine();
+
+        int count =
+            contacts.Count(c => c.State.Equals(state,
+            StringComparison.OrdinalIgnoreCase));
+
+        Console.WriteLine("Count: " + count);
+    }
+
+
+
+    // UC-11 Sort Name
+    public void SortContactsByName()
+    {
+        contacts =
+            contacts.OrderBy(c => c.FirstName).ToList();
+
+        DisplayContacts();
+    }
+
+
+
+    public void SortContactsByCity()
+    {
+        contacts =
+            contacts.OrderBy(c => c.City).ToList();
+
+        DisplayContacts();
+    }
+
+
+
+    public void SortContactsByState()
+    {
+        contacts =
+            contacts.OrderBy(c => c.State).ToList();
+
+        DisplayContacts();
+    }
+
+
+
+    public void SortContactsByZip()
+    {
+        contacts =
+            contacts.OrderBy(c => c.Zip).ToList();
+
+        DisplayContacts();
+    }
+
+
+
+    // UC-13 Write File
+    public void WriteContactsToFile()
+    {
+        try
+        {
+            StreamWriter writer =
+                new StreamWriter(textFilePath);
+
+            foreach (var contact in contacts)
+            {
+                writer.WriteLine(
+
+                    contact.FirstName + "," +
+                    contact.LastName + "," +
+                    contact.Address + "," +
+                    contact.City + "," +
+                    contact.State + "," +
+                    contact.Zip + "," +
+                    contact.PhoneNumber + "," +
+                    contact.Email
+                );
+            }
+
+            writer.Close();
+
+            Console.WriteLine(
+                "Contacts written successfully!"
+            );
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+
+
+
+    // UC-13 Read File
+    public void ReadContactsFromFile()
+    {
+        try
+        {
+            if (!File.Exists(textFilePath))
+            {
+                Console.WriteLine("File not found");
+
                 return;
             }
 
-            addressBooks.Add(new AddressBookUtility());
-            addressBookNames.Add(name);
+            string[] lines =
+                File.ReadAllLines(textFilePath);
 
-            Console.WriteLine(" Address Book created successfully!");
-        }
+            contacts.Clear();
 
-        // UC-6 Select Address Book
-        public static AddressBookUtility SelectAddressBook()
-        {
-            Console.Write("\nEnter Address Book name to select: ");
-            string name = Console.ReadLine();
-
-            for (int i = 0; i < addressBookNames.Count; i++)
+            foreach (string line in lines)
             {
-                if (addressBookNames[i].Equals(name, StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine($" Address Book '{name}' selected!");
-                    return addressBooks[i];
-                }
+                string[] data = line.Split(',');
+
+                AddressBookModel person =
+                    new AddressBookModel();
+
+                person.FirstName = data[0];
+                person.LastName = data[1];
+                person.Address = data[2];
+                person.City = data[3];
+                person.State = data[4];
+                person.Zip = data[5];
+                person.PhoneNumber = data[6];
+                person.Email = data[7];
+
+                contacts.Add(person);
             }
 
-            Console.WriteLine(" Address Book not found!");
-            return null;
+            Console.WriteLine(
+                "Contacts read successfully!"
+            );
         }
-
-        // UC-2 + UC-7 Add Contact
-        public void AddContact()
+        catch (Exception ex)
         {
-            try
-            {
-                Console.WriteLine("\n--- ADD NEW CONTACT ---");
-                Console.Write("First Name : ");
-                string firstName = Console.ReadLine();
-                Console.Write("Last Name  : ");
-                string lastName = Console.ReadLine();
-
-                foreach (var c in contacts)
-                {
-                    if (c.FirstName.Equals(firstName, StringComparison.OrdinalIgnoreCase) &&
-                        c.LastName.Equals(lastName, StringComparison.OrdinalIgnoreCase))
-                        throw new DuplicateContactException(" Duplicate contact not allowed!");
-                }
-
-                Console.Write("Address    : ");
-                string address = Console.ReadLine();
-                Console.Write("City       : ");
-                string city = Console.ReadLine();
-                Console.Write("State      : ");
-                string state = Console.ReadLine();
-                Console.Write("Zip        : ");
-                string zip = Console.ReadLine();
-                Console.Write("Phone      : ");
-                string phone = Console.ReadLine();
-                Console.Write("Email      : ");
-                string email = Console.ReadLine();
-
-                contacts.Add(new Contact(firstName, lastName, address, city, state, zip, phone, email));
-
-                Console.WriteLine(" Contact added successfully!");
-            }
-            catch (DuplicateContactException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Console.WriteLine(ex.Message);
         }
-
-        // UC-3 Edit Contact
-        public void EditContact()
+    }
+    //UC14
+    public void WriteContactsToCsvFile()
+    {
+        try
         {
-            try
+            using (var writer = new StreamWriter(csvFilePath))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
             {
-                Console.Write("\nEnter Full Name to edit: ");
-                string name = Console.ReadLine();
-
-                foreach (var contact in contacts)
-                {
-                    if (contact.GetFullName().Equals(name, StringComparison.OrdinalIgnoreCase))
-                    {
-                        Console.Write("Enter new City  : ");
-                        contact.City = Console.ReadLine();
-                        Console.Write("Enter new State : ");
-                        contact.State = Console.ReadLine();
-                        Console.WriteLine(" Contact updated successfully!");
-                        return;
-                    }
-                }
-
-                throw new ContactNotFoundException(" Contact not found!");
-            }
-            catch (ContactNotFoundException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        // UC-4 Delete Contact
-        public void DeleteContact()
-        {
-            try
-            {
-                Console.Write("\nEnter Full Name to delete: ");
-                string name = Console.ReadLine();
-
-                for (int i = 0; i < contacts.Count; i++)
-                {
-                    if (contacts[i].GetFullName().Equals(name, StringComparison.OrdinalIgnoreCase))
-                    {
-                        contacts.RemoveAt(i);
-                        Console.WriteLine(" Contact deleted successfully!");
-                        return;
-                    }
-                }
-
-                throw new ContactNotFoundException(" Contact not found!");
-            }
-            catch (ContactNotFoundException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
-
-        // UC-5 Add Multiple Contacts
-        public void AddMultipleContacts()
-        {
-            char choice;
-            do
-            {
-                AddContact();
-                Console.Write("Do you want to add another contact? (y/n): ");
-                choice = Console.ReadLine().ToLower()[0];
-            } while (choice == 'y');
-        }
-
-        // UC-8 Search contacts by City or State
-        public void SearchByCityOrState()
-        {
-            Console.Write("\nEnter City or State to search: ");
-            string input = Console.ReadLine();
-
-            bool found = false;
-            foreach (var c in contacts)
-            {
-                if (c.City.Equals(input, StringComparison.OrdinalIgnoreCase) ||
-                    c.State.Equals(input, StringComparison.OrdinalIgnoreCase))
-                {
-                    Console.WriteLine(c);
-                    found = true;
-                }
+                csv.WriteRecords(contacts);
             }
 
-            if (!found) Console.WriteLine(" No contacts found.");
+            Console.WriteLine("Contacts written to CSV successfully!");
         }
-
-        // UC-9 View persons by City or State
-        public void ViewPersonsByCityOrState()
+        catch (Exception ex)
         {
-            SearchByCityOrState();
+            Console.WriteLine(ex.Message);
         }
-
-        // UC-10 Count persons by City or State
-        public void CountPersonsByCityOrState()
+    }
+    public void ReadContactsFromCsvFile()
+    {
+        try
         {
-            Console.Write("\nEnter City or State: ");
-            string input = Console.ReadLine();
-
-            int total = contacts.FindAll(c =>
-                c.City.Equals(input, StringComparison.OrdinalIgnoreCase) ||
-                c.State.Equals(input, StringComparison.OrdinalIgnoreCase)).Count;
-
-            Console.WriteLine($" Number of persons in '{input}': {total}");
-        }
-
-        // UC-11 Sort contacts by person name
-        public void SortContactsByName()
-        {
-            contacts.Sort((a, b) => string.Compare(a.FirstName, b.FirstName, StringComparison.OrdinalIgnoreCase));
-            Console.WriteLine("\n Contacts sorted by Person Name:");
-            DisplayAllContacts();
-        }
-
-        // UC-12 Sort contacts by City
-        public void SortContactsByCity()
-        {
-            contacts.Sort((a, b) => string.Compare(a.City, b.City, StringComparison.OrdinalIgnoreCase));
-            Console.WriteLine("\n Contacts sorted by City:");
-            DisplayAllContacts();
-        }
-
-        // UC-12 Sort contacts by State
-        public void SortContactsByState()
-        {
-            contacts.Sort((a, b) => string.Compare(a.State, b.State, StringComparison.OrdinalIgnoreCase));
-            Console.WriteLine("\n Contacts sorted by State:");
-            DisplayAllContacts();
-        }
-
-        // UC-12 Sort contacts by Zip
-        public void SortContactsByZip()
-        {
-            contacts.Sort((a, b) => string.Compare(a.Zip, b.Zip, StringComparison.OrdinalIgnoreCase));
-            Console.WriteLine("\n Contacts sorted by Zip:");
-            DisplayAllContacts();
-        }
-
-        private void DisplayAllContacts()
-        {
-            if (contacts.Count == 0)
+            if (!File.Exists(csvFilePath))
             {
-                Console.WriteLine(" No contacts available.");
+                Console.WriteLine("CSV file not found.");
                 return;
             }
 
-            foreach (var c in contacts)
-                Console.WriteLine(c);
+            using (var reader = new StreamReader(csvFilePath))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                contacts = csv.GetRecords<AddressBookModel>().ToList();
+            }
+
+            Console.WriteLine("Contacts read from CSV successfully!");
         }
-
-        // UC-13: Write contacts to file
-public void WriteContactsToFile()
-{
-    try
-    {
-        StreamWriter writer = new StreamWriter(filePath);
-
-        foreach (var c in contacts)
+        catch (Exception ex)
         {
-            writer.WriteLine(
-                c.FirstName + "," +
-                c.LastName + "," +
-                c.Address + "," +
-                c.City + "," +
-                c.State + "," +
-                c.Zip + "," +
-                c.Phone + "," +
-                c.Email
-            );
+            Console.WriteLine(ex.Message);
         }
-
-        writer.Close();
-        Console.WriteLine("Contacts written to file successfully!");
     }
-    catch (Exception ex)
+    //UC-15
+    public void WriteContactsToJsonFile()
     {
-        Console.WriteLine("File Write Error: " + ex.Message);
-    }
-}
-
-// UC-13: Read contacts from file
-public void ReadContactsFromFile()
-{
-    try
-    {
-        if (!File.Exists(filePath))
+        try
         {
-            Console.WriteLine("File not found!");
-            return;
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true   // pretty JSON
+            };
+
+            string jsonData =
+                JsonSerializer.Serialize(contacts, options);
+
+            File.WriteAllText(jsonFilePath, jsonData);
+
+            Console.WriteLine("Contacts written to JSON successfully!");
         }
-
-        string[] lines = File.ReadAllLines(filePath);
-        contacts.Clear();
-
-        foreach (var line in lines)
+        catch (Exception ex)
         {
-            string[] data = line.Split(',');
-
-            Contact person = new Contact(
-                data[0], data[1], data[2],
-                data[3], data[4], data[5],
-                data[6], data[7]
-            );
-
-            contacts.Add(person);
+            Console.WriteLine(ex.Message);
         }
-
-        Console.WriteLine("Contacts readed from file successfully!");
     }
-    catch (Exception ex)
+    public void ReadContactsFromJsonFile()
     {
-        Console.WriteLine("File Read Error: " + ex.Message);
-    }
-}
-
-// UC-14: Write contacts to CSV file
-public void WriteContactsToCSV()
-{
-    try
-    {
-        StreamWriter writer = new StreamWriter(csvFilePath);
-
-        // Header row (important in CSV)
-        writer.WriteLine("FirstName,LastName,Address,City,State,Zip,Phone,Email");
-
-        foreach (var c in contacts)
+        try
         {
-            writer.WriteLine(
-                c.FirstName + "," +
-                c.LastName + "," +
-                c.Address + "," +
-                c.City + "," +
-                c.State + "," +
-                c.Zip + "," +
-                c.Phone + "," +
-                c.Email
-            );
+            if (!File.Exists(jsonFilePath))
+            {
+                Console.WriteLine("JSON file not found.");
+                return;
+            }
+
+            string jsonData = File.ReadAllText(jsonFilePath);
+
+            contacts =
+                JsonSerializer.Deserialize<List<AddressBookModel>>(jsonData);
+
+            Console.WriteLine("Contacts read from JSON successfully!");
         }
-
-        writer.Close();
-        Console.WriteLine("Contacts written to CSV file successfully!");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("CSV Write Error: " + ex.Message);
-    }
-}
-
-// UC-14: Read contacts from CSV file
-public void ReadContactsFromCSV()
-{
-    try
-    {
-        if (!File.Exists(csvFilePath))
+        catch (Exception ex)
         {
-            Console.WriteLine("CSV file not found!");
-            return;
+            Console.WriteLine(ex.Message);
         }
-
-        string[] lines = File.ReadAllLines(csvFilePath);
-        contacts.Clear();
-
-        for (int i = 1; i < lines.Length; i++)
+    }
+    // UC-17 : Non-blocking JSON Write
+    public async Task WriteContactsToJsonFileAsync()
+    {
+        try
         {
-            string[] data = lines[i].Split(',');
+            Console.WriteLine("Writing JSON asynchronously...");
 
-            Contact person = new Contact(
-                data[0], data[1], data[2],
-                data[3], data[4], data[5],
-                data[6], data[7]
-            );
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
 
-            contacts.Add(person);
+            string jsonData =
+                JsonSerializer.Serialize(contacts, options);
+
+            await File.WriteAllTextAsync(jsonFilePath, jsonData);
+
+            Console.WriteLine("JSON written successfully (Async)!");
         }
-
-        Console.WriteLine("Contacts loaded from CSV successfully!");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("CSV Read Error: " + ex.Message);
-    }
-}
-
-// UC-15: Write contacts to JSON file
-public void WriteContactsToJSON()
-{
-    try
-    {
-        string json = JsonSerializer.Serialize(contacts, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(jsonFilePath, json);
-        Console.WriteLine("Contacts written to JSON successfully!");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine("JSON Write Error: " + ex.Message);
-    }
-}
-
-// UC-15: Read contacts from JSON file
-public void ReadContactsFromJSON()
-{
-    try
-    {
-        if (!File.Exists(jsonFilePath))
+        catch (Exception ex)
         {
-            Console.WriteLine("JSON file not found!");
-            return;
+            Console.WriteLine(ex.Message);
+        }
+    }
+    // UC-17 : Non-blocking JSON Read
+    public async Task ReadContactsFromJsonFileAsync()
+    {
+        try
+        {
+            Console.WriteLine("Reading JSON asynchronously...");
+
+            if (!File.Exists(jsonFilePath))
+            {
+                Console.WriteLine("JSON file not found.");
+                return;
+            }
+
+            string jsonData =
+                await File.ReadAllTextAsync(jsonFilePath);
+
+            var data =
+                JsonSerializer.Deserialize<List<AddressBookModel>>(jsonData);
+
+            if (data != null)
+                contacts = data;
+
+            Console.WriteLine("JSON read successfully (Async)!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    private AddressBookModel CreateContactUsingReflection()
+    {
+        AddressBookModel person = new AddressBookModel();
+
+        var properties =
+            typeof(AddressBookModel).GetProperties();
+
+        foreach (var prop in properties)
+        {
+            var display =
+                prop.GetCustomAttribute<DisplayAttribute>();
+
+            if (display == null)
+                continue;
+
+            Console.Write($"Enter {display.Label}: ");
+            string input = Console.ReadLine();
+
+            var required =
+                prop.GetCustomAttribute<RequiredAttribute>();
+
+            if (required != null && string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine($"{display.Label} is required!");
+                return null;
+            }
+
+            prop.SetValue(person, input);
         }
 
-        string json = File.ReadAllText(jsonFilePath);
-        contacts = JsonSerializer.Deserialize<List<Contact>>(json);
-
-        Console.WriteLine("Contacts loaded from JSON successfully!");
+        return person;
     }
-    catch (Exception ex)
+    private void DisplayContacts()
     {
-        Console.WriteLine("JSON Read Error: " + ex.Message);
+        foreach (var contact in contacts)
+        {
+            DisplayContact(contact);
+        }
     }
-}
 
+    private void DisplayContacts(List<AddressBookModel> list)
+    {
+        foreach (var contact in list)
+        {
+            DisplayContact(contact);
+        }
+    }
 
+    private void DisplayContact(AddressBookModel contact)
+    {
+        var properties = typeof(AddressBookModel).GetProperties();
 
+        Console.WriteLine("\n----- Contact -----");
 
+        foreach (var prop in properties)
+        {
+            var display = prop.GetCustomAttribute<DisplayAttribute>();
+
+            if (display == null)
+                continue;
+
+            Console.WriteLine(
+                $"{display.Label}: {prop.GetValue(contact)}");
+        }
+
+        Console.WriteLine("-------------------");
+    }
+
+    // ===== TEST SUPPORT METHODS =====
+
+    public void TestAddContact(AddressBookModel person)
+    {
+        contacts.Add(person);
+    }
+
+    public int GetContactCount()
+    {
+        return contacts.Count;
+    }
+    public void TestDeleteContact(string name)
+    {
+        contacts.RemoveAll(c => c.FirstName == name);
     }
 }

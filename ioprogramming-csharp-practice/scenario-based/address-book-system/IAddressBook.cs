@@ -1,34 +1,44 @@
-namespace AddressBookSystem{
-    internal interface IAddressBook
-    {
-            void AddContact();     // UC2 + UC7
-            void EditContact();    // UC3
-            void DeleteContact();  // UC4
-            void AddMultipleContacts(); // UC5
+using System;
+public interface IAddressBook
+{
+  // UC-0
+  void DisplayWelcomeMessage();
+  // UC-1 + UC-2
+  void AddContact();
+  // UC-3
+  void EditContact();
+  // UC-4
+  void DeleteContact();
+  // UC-5
+  void AddMultipleContacts();
+  // UC-7
+  void SearchPersonByCity();
+  // UC-8
+  void SearchPersonByState();
+  // UC-9
+  void ViewPersonByCity();
+  // UC-10
+  void ViewPersonByState();
+  // UC-11
+  void CountPersonByCity();
+  // UC-12
+  void CountPersonByState();
+  // UC-11 Sorting
+  void SortContactsByName();
+  // UC-12 Sorting
+  void SortContactsByCity();
+  void SortContactsByState();
+  void SortContactsByZip();
+  // UC-13
+  void WriteContactsToFile();
+  void ReadContactsFromFile();
 
-            void SearchByCityOrState();   // UC8
-            void ViewPersonsByCityOrState();   // UC9
-            void CountPersonsByCityOrState();   // UC10
+  // UC-14
+  void WriteContactsToCsvFile();
+  void ReadContactsFromCsvFile();
 
-            void SortContactsByName();   // UC-11
+  // UC-15 JSON
+  void WriteContactsToJsonFile();
+  void ReadContactsFromJsonFile();
 
-            void SortContactsByCity();  //UC-12
-            void SortContactsByState();  //UC-12
-            void SortContactsByZip();    //UC-12
-
-
-            void WriteContactsToFile();  //UC-13
-            void ReadContactsFromFile();  //UC-13
-
-            void WriteContactsToCSV();   //UC-14
-            void ReadContactsFromCSV();  //UC-14
-
-            void WriteContactsToJSON(); //UC-15
-            void ReadContactsFromJSON(); //UC-15
-
-
-
-
-    }
 }
-
