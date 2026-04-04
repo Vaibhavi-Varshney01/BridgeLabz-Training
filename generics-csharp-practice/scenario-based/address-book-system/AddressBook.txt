@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 vaibhavi,varshney,qwer,qwerty,qwertyui,28477,8364758223,jdlssl@gmail.com
+=======
+vaibhavi,varshney,alig
+>>>>>>> core-csharp-practise

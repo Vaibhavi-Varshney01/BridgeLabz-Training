@@ -99,6 +99,7 @@ Each entry includes concepts covered and skills practiced.
 ---
 
 ## Day 8: December 26, 2025- Strings in C# 📅
+<<<<<<< HEAD
 
 **Topic:** String Handling and Operations 🧵  
 **What I Learnt:** 📚
@@ -671,3 +672,15 @@ Throughout this journey, I have:
 💡 This repository reflects consistent learning, structured growth, and hands-on implementation across 40+ days of intensive training.
 
 🚀 More updates coming soon!
+=======
+**Topic:** String Handling and Operations 🧵               
+**What I Learnt:** 📚          
+- Introduction to strings in C# 🧩        
+- Declaring and initializing strings🔄         
+- Taking string input from the user 📦          
+- Accessing characters in a string using index ✔️❌        
+- Using string properties and methods such as:Length, ToUpper(), ToLower(), Equals() 🔗           
+- Performed basic string operations: Comparing two strings, Reversing a string, Checking for palindrome strings, Counting vowels and consonants 🔐
+- Implemented programs without using built-in shortcuts where required 📏         
+- Improved understanding of string manipulation and logic building ✅
+>>>>>>> core-csharp-practise
