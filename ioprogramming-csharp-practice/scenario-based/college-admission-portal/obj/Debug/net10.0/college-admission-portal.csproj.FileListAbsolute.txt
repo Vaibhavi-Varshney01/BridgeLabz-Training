@@ -1,0 +1,15 @@
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\bin\Debug\net10.0\college-admission-portal.exe
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\bin\Debug\net10.0\college-admission-portal.deps.json
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\bin\Debug\net10.0\college-admission-portal.runtimeconfig.json
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\bin\Debug\net10.0\college-admission-portal.dll
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\bin\Debug\net10.0\college-admission-portal.pdb
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.AssemblyInfoInputs.cache
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.AssemblyInfo.cs
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.csproj.CoreCompileInputs.cache
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.sourcelink.json
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.dll
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\refint\college-admission-portal.dll
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.pdb
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\college-admission-portal.genruntimeconfig.cache
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\college-admission-portal\obj\Debug\net10.0\ref\college-admission-portal.dll

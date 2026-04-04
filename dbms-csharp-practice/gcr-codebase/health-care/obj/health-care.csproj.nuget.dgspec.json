@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj": {}
+    "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj": {}
   },
   "projects": {
-    "D:\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj": {
+    "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj",
+        "projectUniqueName": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj",
         "projectName": "health-care",
-        "projectPath": "D:\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\obj\\",
+        "projectPath": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\health-care.csproj",
+        "packagesPath": "C:\\Users\\VARSH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\dbms-csharp-practice\\gcr-codebase\\health-care\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\VARSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -53,7 +53,7 @@
           "dependencies": {
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[6.1.4, )"
+              "version": "[5.2.1, )"
             }
           },
           "imports": [
