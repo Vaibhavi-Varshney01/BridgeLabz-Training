@@ -1,0 +1,96 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.1"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1771582448000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "Address-book-system"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system"
+    },
+    {
+      "key": "sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "89B55FC6-F162-414F-9C19-E1C732F96675"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.projectKey",
+      "value": "Address-book-system:89B55FC6-F162-414F-9C19-E1C732F96675"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.projectName",
+      "value": "address-book-system"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.projectBaseDir",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.working.directory",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.sources",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBookExceptions.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBookMain.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBookModel.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBookUtility.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\DisplayAttribute.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\IAddressBook.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\RequiredAttribute.cs,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBook.csv,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBook.json,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\AddressBook.txt,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\obj\\address-book-system.csproj.nuget.dgspec.json,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\obj\\project.assets.json,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\bin\\Debug\\net10.0\\address-book-system.deps.json,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\bin\\Debug\\net10.0\\address-book-system.runtimeconfig.json,C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\obj\\Debug\\net10.0\\address-book-system.sourcelink.json"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.cs.analyzer.projectOutPaths",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.cs.roslyn.reportFilePaths",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "89B55FC6-F162-414F-9C19-E1C732F96675.sonar.cs.scanner.telemetry",
+      "value": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "sonar.token",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://127.0.0.1:9000"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}

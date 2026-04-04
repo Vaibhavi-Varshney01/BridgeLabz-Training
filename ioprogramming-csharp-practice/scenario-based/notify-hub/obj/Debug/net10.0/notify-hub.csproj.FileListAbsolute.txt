@@ -1,0 +1,15 @@
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\bin\Debug\net10.0\notify-hub.exe
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\bin\Debug\net10.0\notify-hub.deps.json
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\bin\Debug\net10.0\notify-hub.runtimeconfig.json
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\bin\Debug\net10.0\notify-hub.dll
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\bin\Debug\net10.0\notify-hub.pdb
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.AssemblyInfoInputs.cache
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.AssemblyInfo.cs
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.csproj.CoreCompileInputs.cache
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.sourcelink.json
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.dll
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\refint\notify-hub.dll
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.pdb
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\notify-hub.genruntimeconfig.cache
+C:\Users\lavan\OneDrive\Desktop\BridgeLabz-Training\ioprogramming-csharp-practice\scenario-based\notify-hub\obj\Debug\net10.0\ref\notify-hub.dll

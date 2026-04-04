@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OfcQL45q0GQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\VARSH\\OneDrive\\Desktop\\BridgeLabz-Training\\ioprogramming-csharp-practice\\scenario-based\\address-book-system\\address-book-system.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\VARSH\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
